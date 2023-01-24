@@ -47,3 +47,10 @@
     width: 100%;
     max-width: 300px;
 }
+
+.login__button:disabled{
+    background-color: #eee;
+    color: #aaa;
+    cursor: auto;
+
+}
