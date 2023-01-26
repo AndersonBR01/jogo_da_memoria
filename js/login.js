@@ -24,7 +24,7 @@ const handleSubmit = (event) =>{
     // ir para a proximas paginas!!
     window.location='pages/game.html'
 
-    alert( 'Que começe os jogos! ')
+    //alert( 'Que começe os jogos! ')
 }
 
 input.addEventListener('input', validateInput);
