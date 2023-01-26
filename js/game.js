@@ -1,5 +1,8 @@
-// essas funções estão criando as cartas e esta jogando dentro do grid;
+const grid = document.querySelector('.grid');
+const spanPlayer = document.querySelector('.player');
+const timer = document.querySelector('.timer')
 
+// essas funções estão criando as cartas e esta jogando dentro do grid;
 const characters = [
     'beth',
     'jerry',
@@ -25,8 +28,11 @@ let secondCard = '';
 const checkEndGame = () => {
     const disabledCards = document.querySelectorAll('.disable__card');
 
-    if (disabledCards.length ===20){
-        alert('Parabéns, vocé ganhou!!');
+    if (disabledCards.length === 20) {
+
+        clearInterval(this.loop);
+        alert(`Parabens ${spanPlayer.innerHTML}!  Seu tempo foi: ${timer.innerHTML}`);
+
     }
 }
 
@@ -78,7 +84,6 @@ const revealCard = ({ target }) => {
 
 }
 
-const grid = document.querySelector('.grid');
 
 const createCard = (character) => {
 
@@ -114,4 +119,19 @@ const loadGame = () => {
     });
 }
 
-loadGame();
+const startTimer = () =>{
+    this.loop = setInterval(() => {
+        const currentTime = + timer.innerHTML;
+        timer.innerHTML = currentTime + 1;
+
+    }, 1000);
+}
+
+window.onload = () =>{
+    spanPlayer.innerHTML = localStorage.getItem('player');
+
+    startTimer();
+    loadGame();
+}
+
+

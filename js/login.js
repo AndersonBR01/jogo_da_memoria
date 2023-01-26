@@ -19,8 +19,12 @@ const handleSubmit = (event) =>{
 
     //salva os dados input no navegador
     localStorage.setItem('player', input.value);
+
+
     // ir para a proximas paginas!!
     window.location='pages/game.html'
+
+    alert( 'Que começe os jogos! ')
 }
 
 input.addEventListener('input', validateInput);
